@@ -78,6 +78,11 @@ npm ci -production
 echo " "
 echo ">>>>> Create configuration.yaml <<<<<"
 cat > /opt/zigbee2mqtt/data/configuration.yaml <<EOL
+# Home Assistant integration (MQTT discovery)
+homeassistant: false
+
+# allow new devices to join
+permit_join: true
 
 # MQTT settings
 mqtt:
