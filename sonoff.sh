@@ -43,6 +43,9 @@ echo "Commence MQTT Setup"
 echo "----------------------------------------------------------------"
 sudo apt-get install mosquitto -y
 sudo apt-get install mosquitto-clients
+echo "----------------------------------------------------------------"
+echo "Create mosquitto.conf file"
+echo "----------------------------------------------------------------"
 cat > sudo nano /etc/mosquitto/mosquitto.conf <<EOL
 # Place your local configuration in /etc/mosquitto/conf.d/
 #
@@ -128,7 +131,7 @@ echo " "
 echo "----------------------------------------------------------------"
 echo "Create Running as a daemon with systemctl"
 echo "----------------------------------------------------------------"
-cat > sudo sudo nano /etc/systemd/system/zigbee2mqtt.service <<EOL
+cat > sudo nano /etc/systemd/system/zigbee2mqtt.service <<EOL
 [Unit]
 Description=zigbee2mqtt
 After=network.target
