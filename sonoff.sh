@@ -120,8 +120,7 @@ User=pi
 WantedBy=multi-user.target
 EOL
 echo " "
-echo "Zigbee2MQTT Installed.
-echo " "
+echo "Zigbee2MQTT Installed"
 echo "Proceed to Configure MQTT Username & Password"
 echo "Then Proceed to Configure Zigbee2MQTT"
 echo "The End"
