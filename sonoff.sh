@@ -124,3 +124,4 @@ echo "Zigbee2MQTT Installed"
 echo "Proceed to Configure MQTT Username & Password"
 echo "Then Proceed to Configure Zigbee2MQTT"
 echo "The End"
+sudo systemctl enable zigbee2mqtt.service
