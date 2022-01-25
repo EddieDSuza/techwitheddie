@@ -92,7 +92,7 @@ mqtt:
 # Serial settings
 serial:
   # Location of the adapter (see first step of this guide)
-  port: /dev/ttyACM0
+  port: /dev/ttyAMA0
 advanced:
   network_key: GENERATE
 EOL
