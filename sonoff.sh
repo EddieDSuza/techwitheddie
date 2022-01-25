@@ -17,13 +17,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.                          #
 ##################################################################################################
 echo " "
-echo " "
-echo " "
 echo "----------------------------------------------------------------"
 echo "Setting Up Your Hub W/ Zigbee2MQTT Sonoff - Ver 1.0"
 echo "----------------------------------------------------------------"
-echo " "
-echo " "
 echo " "
 # System Upgrade
 echo "----------------------------------------------------------------"
@@ -34,8 +30,6 @@ sudo apt -y upgrade
 echo "----------------------------------------------------------------"
 echo "System Upgrade Completed"
 echo "----------------------------------------------------------------"
-echo " "
-echo " "
 echo " "
 # MQTT setup
 echo "----------------------------------------------------------------"
@@ -69,41 +63,23 @@ echo "----------------------------------------------------------------"
 echo "mosquitto.conf file created"
 echo "----------------------------------------------------------------"
 echo " "
-echo " "
-echo " "
 # Z2M setup
 echo "----------------------------------------------------------------"
 echo "Commence Zigbee2MQTT Setup"
 echo "----------------------------------------------------------------"
 echo " "
-echo " "
-echo " "
-echo "----------------------------------------------------------------"
 echo "Install Node.js and required dependencies"
-echo "----------------------------------------------------------------"
 sudo apt-get install -y nodejs npm git make g++ gcc
 echo " "
-echo " "
-echo " "
-echo "----------------------------------------------------------------"
 echo "Clone Zigbee2MQTT repository"
-echo "----------------------------------------------------------------"
 git clone https://github.com/Koenkk/zigbee2mqtt.git
 sudo mv zigbee2mqtt /opt/zigbee2mqtt
 echo " "
-echo " "
-echo " "
-echo "----------------------------------------------------------------"
 echo "Install dependencies (as user "pi")"
-echo "----------------------------------------------------------------"
 cd /opt/zigbee2mqtt
 npm ci
 echo " "
-echo " "
-echo " "
-echo "----------------------------------------------------------------"
 echo "Create Configuration.Yaml"
-echo "----------------------------------------------------------------"
 cat > /opt/zigbee2mqtt/data/configuration.yaml <<EOL
 # MQTT settings
 mqtt:
@@ -122,15 +98,10 @@ serial:
 advanced:
   network_key: GENERATE
 EOL
-echo "----------------------------------------------------------------"
+echo " "
 echo "Configuration.yaml file created"
-echo "----------------------------------------------------------------"
 echo " "
-echo " "
-echo " "
-echo "----------------------------------------------------------------"
 echo "Create Running as a daemon with systemctl"
-echo "----------------------------------------------------------------"
 cat > /etc/systemd/system/zigbee2mqtt.service <<EOL
 [Unit]
 Description=zigbee2mqtt
@@ -149,26 +120,8 @@ User=pi
 WantedBy=multi-user.target
 EOL
 echo " "
-echo " "
-echo " "
-echo "----------------------------------------------------------------"
 echo "Zigbee2MQTT Installed.
-echo "----------------------------------------------------------------"
 echo " "
-echo " "
-echo " "
-echo "----------------------------------------------------------------"
 echo "Proceed to Configure MQTT Username & Password"
-echo "----------------------------------------------------------------"
-echo " "
-echo " "
-echo " "
-echo "----------------------------------------------------------------"
 echo "Then Proceed to Configure Zigbee2MQTT"
-echo "----------------------------------------------------------------"
-echo " "
-echo " "
-echo " "
-echo "----------------------------------------------------------------"
 echo "The End"
-echo "----------------------------------------------------------------"
