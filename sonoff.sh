@@ -134,7 +134,7 @@ Description=zigbee2mqtt
 After=network.target
 
 [Service]
-ExecStart=npm start
+ExecStart=/usr/bin/npm start
 WorkingDirectory=/opt/zigbee2mqtt
 StandardOutput=inherit
 # Or use StandardOutput=null if you don't want Zigbee2MQTT messages filling syslog, for more options see systemd.exec(5)
