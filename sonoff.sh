@@ -55,7 +55,9 @@ log_dest file /var/log/mosquitto/mosquitto.log
 include_dir /etc/mosquitto/conf.d
 
 allow_anonymous false
+
 password_file /etc/mosquitto/pwfile
+
 listener 1883
 EOL
 echo " "
