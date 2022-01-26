@@ -25,8 +25,7 @@ echo " "
 echo " "
 echo " >>>>> Commence System Upgrade <<<<<"
 echo " "
-sudo apt -y update
-sudo apt -y upgrade
+sudo apt-get update && sudo apt-get upgrade -y
 echo " "
 echo ">>>>> System Upgrade Completed <<<<<"
 echo " "
@@ -69,12 +68,16 @@ echo ">>>>> Install Node.js and Dependencies <<<<<"
 sudo apt-get install -y nodejs npm git make g++ gcc
 echo " "
 echo ">>>>> Clone Zigbee2MQTT repository <<<<<"
-git clone https://github.com/Koenkk/zigbee2mqtt.git
-sudo mv zigbee2mqtt /opt/zigbee2mqtt
+sudo git clone https://github.com/Koenkk/zigbee2mqtt.git /opt/zigbee2mqtt
+sudo chown -R pi:pi /opt/zigbee2mqtt
 echo " "
 echo ">>>>> Install dependencies (as user "pi" or "hoobs" <<<<<)"
 cd /opt/zigbee2mqtt
-npm ci -production
+git checkout HEAD -- npm-shrinkwrap.json
+git fetch
+git checkout dev
+git pull
+npm ci
 echo " "
 echo ">>>>> Create configuration.yaml <<<<<"
 cat > /opt/zigbee2mqtt/data/configuration.yaml <<EOL
@@ -98,7 +101,14 @@ mqtt:
 serial:
   # Location of the adapter (see first step of this guide)
   port: /dev/ttyAMA0
+
+frontend:
+  # Optional, default 8080 or you can use your own as well.
+  port: 8082
+  # IP address of the device running Zigbee2MQTT
+  host: 192.168.86.12
 advanced:
+  log_level: debug
   network_key: GENERATE
 EOL
 echo " "
