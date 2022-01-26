@@ -12,6 +12,35 @@ sudo apt-get update && sudo apt-get upgrade -y
 echo " "
 echo ">>>>> System Upgrade Completed <<<<<"
 echo " "
+# System Upgrade
+echo " "
+echo " >>>>> Commence MQTT Setup <<<<<"
+echo " "
+sudo apt-get install mosquitto -y
+sudo apt-get install mosquitto-clients
+cat > /opt/zigbee2mqtt/data/configuration.yaml <<EOL
+# Place your local configuration in /etc/mosquitto/conf.d/
+# A full description of the configuration file is at
+# /usr/share/doc/mosquitto/examples/mosquitto.conf.example
+
+pid_file /run/mosquitto/mosquitto.pid
+
+persistence true
+
+persistence_location /var/lib/mosquitto/
+
+log_dest file /var/log/mosquitto/mosquitto.log
+
+include_dir /etc/mosquitto/conf.d
+
+allow_anonymous true
+
+listener 1883
+
+EOL
+echo " "
+echo ">>>>> MQTT Installed <<<<<"
+echo " "
 # Z2M setup
 echo ">>>>> Commence Zigbee2MQTT Setup <<<<<"
 echo " "
@@ -48,7 +77,7 @@ mqtt:
 # Serial settings
 serial:
   # Location of the adapter (see first step of this guide)
-  port: /dev/ttyUSB0
+  port: /dev/ttyAMA0
 
 frontend:
   # Optional, default 8080 or you can use your own as well.
@@ -83,11 +112,6 @@ EOL
 echo " "
 echo "Zigbee2MQTT Installed"
 echo " "
-echo "Proceed to Configure MQTT Username & Password"
-echo " "
-echo "Then Proceed to Configure Zigbee2MQTT"
-echo " "
 echo ">>>>> Start Zigbee2MQTT automatically on boot <<<<<"
 echo " "
 sudo systemctl enable zigbee2mqtt.service
-sudo reboot
