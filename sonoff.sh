@@ -144,3 +144,4 @@ echo " "
 echo ">>>>> Start Zigbee2MQTT automatically on boot <<<<<"
 echo " "
 sudo systemctl enable zigbee2mqtt.service
+sudo reboot
