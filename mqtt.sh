@@ -15,7 +15,13 @@ echo " "
 echo " >>>>> Commence MQTT Setup <<<<<"
 echo " "
 sudo apt-get install mosquitto -y
+echo " "
+echo " >>>>> Commence Clients Setup <<<<<"
+echo " "
 sudo apt-get install mosquitto-clients
+echo " "
+echo " >>>>> Create Configuration File <<<<<"
+echo " "
 cat > /etc/mosquitto/mosquitto.conf <<EOL
 # Place your local configuration in /etc/mosquitto/conf.d/
 # A full description of the configuration file is at
