@@ -6,7 +6,7 @@ echo " "
 # Z2M setup
 echo ">>>>> Clone Zigbee2MQTT repository <<<<<"
 sudo git clone https://github.com/Koenkk/zigbee2mqtt.git /opt/zigbee2mqtt
-sudo chown -R pi:pi /opt/zigbee2mqtt
+sudo mv zigbee2mqtt /opt/zigbee2mqtt
 echo " "
 echo ">>>>> Install dependencies (as user "pi" or "hoobs" <<<<<)"
 cd /opt/zigbee2mqtt
