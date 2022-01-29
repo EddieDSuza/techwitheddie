@@ -7,7 +7,7 @@ echo " "
 echo ">>>>> Clone Zigbee2MQTT repository <<<<<"
 sudo git clone https://github.com/Koenkk/zigbee2mqtt.git /opt/zigbee2mqtt
 echo " "
-echo ">>>>> Install dependencies (as user "pi" or "hoobs" <<<<<)"
+echo ">>>>> Install dependencies <<<<<"
 cd /opt/zigbee2mqtt
 git checkout HEAD -- npm-shrinkwrap.json
 git fetch
