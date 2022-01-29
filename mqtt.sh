@@ -18,7 +18,7 @@ sudo apt-get install mosquitto -y
 echo " "
 echo " >>>>> Commence Clients Setup <<<<<"
 echo " "
-sudo apt-get install mosquitto-clients
+sudo apt-get install mosquitto-clients -y
 echo " "
 echo " >>>>> Create Configuration File <<<<<"
 echo " "
