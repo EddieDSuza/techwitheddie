@@ -28,21 +28,21 @@ mqtt:
   # MQTT base topic for Zigbee2MQTT MQTT messages
   base_topic: zigbee2mqtt
   # MQTT server URL
-  server: 'mqtt://localhost'
+  server: 'mqtt://192.168.8.169:1883'
   # MQTT server authentication, uncomment if required:
-  # user: my_user
-  # password: my_password
+  user: mqtt
+  password: mqtt
 
 # Serial settings
 serial:
   # Location of the adapter (see first step of this guide)
-  port: /dev/ttyAMA0
+  port: /dev/ttyUSB0
 
 frontend:
   # Optional, default 8080 or you can use your own as well.
-  port: 8082
+  port: 8080
   # IP address of the device running Zigbee2MQTT
-  host: 192.168.86.12
+  host: 192.168.8.169
 advanced:
   log_level: debug
   network_key: GENERATE
