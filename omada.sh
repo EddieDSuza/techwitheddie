@@ -17,12 +17,6 @@
 echo " "
 echo " "
 echo " "
-echo "----------------------------------------------------------------"
-echo "Setting Up Maxilife Hub W/ Zigbee ConbeeII - Ver 1.0"
-echo "----------------------------------------------------------------"
-echo " "
-echo " "
-echo " "
 # System Upgrade
 echo "----------------------------------------------------------------"
 echo "Commence System Upgrade"
