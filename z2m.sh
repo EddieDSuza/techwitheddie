@@ -12,6 +12,10 @@ sudo chown -R pi:pi /opt/zigbee2mqtt
 echo " "
 echo ">>>>> Install dependencies <<<<<"
 cd /opt/zigbee2mqtt
+git checkout HEAD -- npm-shrinkwrap.json
+git fetch
+git checkout dev
+git pull
 npm ci
 echo " "
 echo ">>>>> Create configuration.yaml <<<<<"
