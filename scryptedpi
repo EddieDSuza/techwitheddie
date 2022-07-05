@@ -1,0 +1,54 @@
+#!/bin/bash
+
+##################################################################################################
+# Scrypted Raspberry Pi Install                                                                  #
+# Copyright (C) 2022 Eddie dSuZa                                                                 #
+#                                                                                                #
+# This program is free software: you can redistribute it and/or modify                           #
+# it under the terms of the GNU General Public License as published by                           #
+# the Free Software Foundation, either version 3 of the License, or                              #
+# (at your option) any later version.                                                            #
+#                                                                                                #
+# This program is distributed in the hope that it will be useful,                                #
+# but WITHOUT ANY WARRANTY; without even the implied warranty of                                 #
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                                  #
+# GNU General Public License for more details.                                                   #
+#                                                                                                #
+# You should have received a copy of the GNU General Public License                              #
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.                          #
+##################################################################################################
+echo " "
+echo " "
+echo " "
+echo "----------------------------------------------------------------"
+echo "Commence System Upgrade"
+echo "----------------------------------------------------------------"
+sudo apt-get update && sudo apt-get upgrade -y
+echo " "
+echo "Upgrade Complete"
+echo " "
+echo "----------------------------------------------------------------"
+echo "Set up Node.js repository and install Node.js + required dependencies"
+echo "----------------------------------------------------------------"
+echo " "
+sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt-get install -y nodejs git make g++ gcc
+echo " "
+echo "Node & NPM Installed"
+echo " "
+echo "----------------------------------------------------------------"
+echo "Install Scrypted"
+echo "----------------------------------------------------------------"
+echo " "
+curl -s https://raw.githubusercontent.com/koush/scrypted/main/docker/install-scrypted-dependencies-linux.sh | sudo SERVICE_USER=$USER bash
+echo " "
+echo "Scrypted Installed"
+echo " "
+echo "----------------------------------------------------------------"
+echo "ALL PACKAGES INSTALLED WITH NO ERRORS"
+echo "----------------------------------------------------------------"
+echo " "
+echo " "
+echo " "
+echo "Rebooting Now"
+sudo reboot
