@@ -7,15 +7,15 @@ echo " "
 echo ">>>>> Clone Zigbee2MQTT repository <<<<<"
 sudo git clone https://github.com/Koenkk/zigbee2mqtt.git /opt/zigbee2mqtt
 echo " "
-echo ">>>>> Zigbee2MQTT Permission <<<<<"
-sudo chown -R pi:pi /opt/zigbee2mqtt
-echo " "
 echo ">>>>> Install dependencies <<<<<"
 cd /opt/zigbee2mqtt
 git fetch
 git checkout dev
 git pull
 npm ci
+echo " "
+echo ">>>>> Zigbee2MQTT Permission <<<<<"
+sudo chown -R pi:pi /opt/zigbee2mqtt
 echo " "
 echo ">>>>> Create configuration.yaml <<<<<"
 cat > /opt/zigbee2mqtt/data/configuration.yaml <<EOL
