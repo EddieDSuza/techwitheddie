@@ -32,8 +32,8 @@ mqtt:
   # MQTT server URL
   server: 'mqtt://192.168.8.169:1883'
   # MQTT server authentication, uncomment if required:
-  user: mqtt
-  password: mqtt
+  # user: mqtt
+  # password: mqtt
 
 # Serial settings
 serial:
@@ -59,7 +59,7 @@ Description=zigbee2mqtt
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/npm start
+ExecStart=npm start
 WorkingDirectory=/opt/zigbee2mqtt
 StandardOutput=inherit
 # Or use StandardOutput=null if you don't want Zigbee2MQTT messages filling syslog, for more options see systemd.exec(5)
