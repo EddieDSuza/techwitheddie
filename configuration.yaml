@@ -1,0 +1,30 @@
+# Home Assistant integration (MQTT discovery)
+homeassistant: false
+
+# allow new devices to join
+permit_join: true
+
+# MQTT settings
+mqtt:
+  # MQTT base topic for zigbee2mqtt MQTT messages
+  base_topic: zigbee2mqtt
+  # MQTT server URL
+  server: 'mqtt://192.168.1.86:1883'
+  # MQTT server authentication, uncomment if required:
+  # user: admin
+  # password: admin
+
+# Serial settings
+serial:
+  # Location of CC2531 USB sniffer
+  port: /dev/ttyUSB0
+  adapter: deconz
+
+frontend:
+  # Optional, default 8080 or you can use your own as well.
+  port: 8081
+  # IP address of the device running Zigbee2MQTT
+  host: 192.168.1.86
+  
+advanced:
+  network_key: GENERATE
