@@ -114,7 +114,7 @@ echo " "
 sudo docker run --name=heimdall -d --restart unless-stopped -v /home/kodestar/docker/heimdall:/config -e PGID=1000 -e PUID=1000 -p 8201:80 -p 8200:443 linuxserver/heimdall
 echo " "
 echo "----------------------------------------------------------------"
-echo "HEIMDALL Interface is reachable at homebridge.local:8200"
+echo "HEIMDALL Interface is reachable at homebridge.local:8201"
 echo "----------------------------------------------------------------"
 echo " "
 echo " "
