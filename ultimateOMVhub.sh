@@ -57,7 +57,7 @@ echo " "
 echo "----------------------------------------------------------------"
 echo "Commence Homebridge Setup"
 echo "----------------------------------------------------------------"
-sudo docker run --name homebridge --network host -d --restart unless-stopped -v $(pwd)/homebridge:/server/volume -e PGID=1000 -e PUID=1000 -e HOMEBRIDGE_CONFIG_UI=1 -e HOMEBRIDGE_CONFIG_UI_PORT=8181 oznu/homebridge
+sudo docker run --name homebridge --network host -d --restart unless-stopped -v $(pwd)/homebridge:/server/volume -e PGID=1000 -e PUID=1000 -e HOMEBRIDGE_CONFIG_UI=1 -e HOMEBRIDGE_CONFIG_UI_PORT=8581 oznu/homebridge
 echo "----------------------------------------------------------------"
 echo "Homebridge Setup Completed"
 echo "----------------------------------------------------------------"
