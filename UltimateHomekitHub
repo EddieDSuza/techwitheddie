@@ -100,7 +100,7 @@ echo "Commence Scrypted Setup"
 echo "----------------------------------------------------------------"
 sudo docker run --name="scrypted" --network host -d --restart unless-stopped -v ~/.scrypted/volume:/server/volume koush/scrypted
 echo "----------------------------------------------------------------"
-echo "Scrypted Interface is reachable at homebridge.local:10443"
+echo "Scrypted Interface is reachable at homebridge.local:10443 or port 11080"
 echo "----------------------------------------------------------------"
 echo " "
 echo " "
