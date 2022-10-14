@@ -1,8 +1,8 @@
 {
     "platform": "WLED",
     "wleds": [{
-        "name": "front",
-        "host": "192.168.86.18",
+        "name": "wled",
+        "host": "192.168.XX.XX",
         "effects": ["Android",
             "Aurora",
             "Blends",
