@@ -28,3 +28,4 @@ frontend:
   
 advanced:
   network_key: GENERATE
+  pan_id: GENERATE
