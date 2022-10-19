@@ -1,10 +1,17 @@
 # compiled USB Modules
 
+sudo su
+
+modprobe usbserial
+modprobe ftdi_sio
+modprobe cdc-acm
+
 cd /lib/modules/
 
-sudo wget https://github.com/robertklep/dsm7-usb-serial-drivers/raw/main/modules/braswell/ch341.ko
-sudo wget https://github.com/robertklep/dsm7-usb-serial-drivers/raw/main/modules/braswell/cp210x.ko
-sudo wget https://github.com/robertklep/dsm7-usb-serial-drivers/raw/main/modules/braswell/pl2303.ko # optional
+Sudo wget https://web.archive.org/web/20220126180837/http://www.jadahl.com/iperf-arp-scan/DSM_7.0/apollolake/ch341.ko
+sudo insmod /lib/modules/ch341.ko
+sudo wget https://web.archive.org/web/20220126180837/http://www.jadahl.com/iperf-arp-scan/DSM_7.0/apollolake/cp210x.ko
+sudo insmod /lib/modules/cp210x.ko
 
 # Configure an autoload script
 
