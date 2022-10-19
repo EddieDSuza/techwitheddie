@@ -45,3 +45,14 @@ sudo docker run -itd --name="Zigbee2MQTT" --net=host -e TZ=America/Sao_Paulo --d
 echo "----------------------------------------------------------------"
 echo "Zigbee2MQTT Setup Completed"
 echo "----------------------------------------------------------------"
+echo " "
+echo " "
+echo " "
+# Z2M configuration.yaml 
+echo "----------------------------------------------------------------"
+echo "Transfer Zigbee2MQTT Config"
+echo "----------------------------------------------------------------"
+wget https://raw.githubusercontent.com/EddieDSuza/techwitheddie/main/configuration.yaml -P /volume1/docker/zigbee2mqtt/data
+echo "----------------------------------------------------------------"
+echo "Transfer Zigbee2MQTT Config Complete"
+echo "----------------------------------------------------------------"
