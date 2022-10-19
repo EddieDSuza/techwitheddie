@@ -48,12 +48,6 @@ echo "----------------------------------------------------------------"
 echo " "
 echo " "
 echo " "
-# Z2M configuration.yaml 
-echo "----------------------------------------------------------------"
-echo "Transfer Zigbee2MQTT Config"
-echo "----------------------------------------------------------------"
-sudo rm -rf /volume1/docker/zigbee2mqtt/data/configuration.yaml
-wget https://raw.githubusercontent.com/EddieDSuza/techwitheddie/main/configuration.yaml -P /volume1/docker/zigbee2mqtt/data
 echo "----------------------------------------------------------------"
 echo "Transfer Zigbee2MQTT Config Complete"
 echo "----------------------------------------------------------------"
