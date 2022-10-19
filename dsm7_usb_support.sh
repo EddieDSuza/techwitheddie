@@ -8,7 +8,7 @@ modprobe cdc-acm
 
 cd /lib/modules/
 
-Sudo wget https://web.archive.org/web/20220126180837/http://www.jadahl.com/iperf-arp-scan/DSM_7.0/apollolake/ch341.ko
+sudo wget https://web.archive.org/web/20220126180837/http://www.jadahl.com/iperf-arp-scan/DSM_7.0/apollolake/ch341.ko
 sudo insmod /lib/modules/ch341.ko
 sudo wget https://web.archive.org/web/20220126180837/http://www.jadahl.com/iperf-arp-scan/DSM_7.0/apollolake/cp210x.ko
 sudo insmod /lib/modules/cp210x.ko
