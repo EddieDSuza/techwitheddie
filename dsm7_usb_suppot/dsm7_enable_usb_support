@@ -16,9 +16,9 @@ sudo insmod /lib/modules/cp210x.ko
 # Configure an autoload script
 
 cd  /usr/local/etc/rc.d/
-sudo wget https://github.com/EddieDSuza/techwitheddie/blob/main/dsm7_usb_suppot/start-usb-drivers.sh
-sudo chmod +x start-usb-drivers.sh
+sudo wget https://raw.githubusercontent.com/robertklep/dsm7-usb-serial-drivers/main/usb-serial-drivers.sh
+sudo chmod +x usb-serial-drivers.sh
 
 # Make sure your devices are recongnized
 
-sudo /usr/local/etc/rc.d/start-usb-drivers.sh start
+sudo /usr/local/etc/rc.d/usb-serial-drivers.sh start
