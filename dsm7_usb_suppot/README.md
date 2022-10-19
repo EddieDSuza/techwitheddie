@@ -1,10 +1,6 @@
-Download driver you need and copy to your NAS.
-Place the drivers in /lib/modules folder.
-Then run:
-sudo insmod /lib/modules/usbserial.ko
-sudo insmod /lib/modules/cp210x.ko
+Download drivers as you need and copy to your NAS. Place the drivers in /lib/modules folder.
 
-If your driver is cp210x.ko.
+Follow detailed instructions that is provided here https://github.com/EddieDSuza/techwitheddie/blob/main/dsm7_usb_suppot/dsm7_enable_usb_support
 
 You can also download the start-usb-drivers.sh script and copy to folder: /usr/local/etc/rc.d/start-usb-drivers.sh
 Then: chmod +x /usr/local/etc/rc.d/start-usb-drivers.sh
