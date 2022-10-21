@@ -8,15 +8,15 @@ modprobe cdc-acm
 
 cd /lib/modules/
 
-sudo wget https://github.com/EddieDSuza/techwitheddie/blob/main/dsm7_usb_suppot/ch341.ko
+sudo wget https://github.com/robertklep/dsm7-usb-serial-drivers/blob/main/modules/apollolake/dsm-7.0/ch341.ko
 sudo insmod /lib/modules/ch341.ko
-sudo wget https://github.com/EddieDSuza/techwitheddie/blob/main/dsm7_usb_suppot/cp210x.ko
+sudo https://github.com/robertklep/dsm7-usb-serial-drivers/blob/main/modules/apollolake/dsm-7.0/cp210x.ko
 sudo insmod /lib/modules/cp210x.ko
 
 # Configure an autoload script
 
 cd  /usr/local/etc/rc.d/
-sudo wget https://raw.githubusercontent.com/robertklep/dsm7-usb-serial-drivers/main/usb-serial-drivers.sh
+sudo wget https://github.com/robertklep/dsm7-usb-serial-drivers/blob/main/usb-serial-drivers.sh
 sudo chmod +x usb-serial-drivers.sh
 
 # Make sure your devices are recongnized
