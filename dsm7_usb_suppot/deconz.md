@@ -15,5 +15,3 @@ sudo docker run -d \
 -e DECONZ_WEB_PORT=8085 \
 -e DECONZ_WS_PORT=443 \
 deconzcommunity/deconz:stable
-
-# Access <Synology IP Address>:8085
