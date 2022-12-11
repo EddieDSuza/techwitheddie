@@ -3,19 +3,24 @@ echo "----------------------------------------------------------------"
 echo "Setting Up Your Hub W/ Zigbee2MQTT - Ver 1.0"
 echo "----------------------------------------------------------------"
 echo " "
+# Node setup
+sudo curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install -y nodejs git make g++ gcc
+echo ">>>>> Node Installed <<<<<"
 # Z2M setup
 echo ">>>>> Clone Zigbee2MQTT repository <<<<<"
+sudo mkdir /opt/zigbee2mqtt
 sudo git clone https://github.com/Koenkk/zigbee2mqtt.git /opt/zigbee2mqtt
 echo " "
 echo ">>>>> Install dependencies <<<<<"
 cd /opt/zigbee2mqtt
 git fetch
-git checkout dev
+git checkout master
 git pull
 npm ci
 echo " "
 echo ">>>>> Zigbee2MQTT Permission <<<<<"
-sudo chown -R pi:pi /opt/zigbee2mqtt
+sudo chown -R ${USER}: /opt/zigbee2mqtt
 echo " "
 echo ">>>>> Create configuration.yaml <<<<<"
 cat > /opt/zigbee2mqtt/data/configuration.yaml <<EOL
