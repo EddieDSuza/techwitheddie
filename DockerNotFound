@@ -1,23 +1,25 @@
-#First, we have to update the apt index:
+#!/bin/bash
+
+# First, we have to update the apt index:
 
 apt-get update
 
-#Now we install some necessary packages:
+# Now we install some necessary packages:
 
 apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 
-#It’s time to add the official GPG key:
+# It’s time to add the official GPG key:
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-#Now let’s configure apt to use the stable version of the Docker repo (copy all 4 lines):
+# Now let’s configure apt to use the stable version of the Docker repo (copy all 4 lines):
 
 add-apt-repository \
 "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
 $(lsb_release -cs) \
 stable"
 
-#And finally, install Docker:
+# And finally, install Docker:
 
 apt-get update
 apt-get install docker-ce docker-ce-cli containerd.io
