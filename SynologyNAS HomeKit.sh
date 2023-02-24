@@ -33,5 +33,3 @@ sudo mkdir /volume1/docker/zigbee2mqtt
 sudo mkdir /volume1/docker/zigbee2mqtt/data
 sudo wget https://raw.githubusercontent.com/EddieDSuza/techwitheddie/main/configuration.yaml -P /volume1/docker/zigbee2mqtt/data
 sudo docker run -itd --name="Zigbee2MQTT" --net=host -e TZ=America/Sao_Paulo --device=/dev/ttyUSB0 --restart=always -v /volume1/docker/zigbee2mqtt/data:/app/data koenkk/zigbee2mqtt:latest
-
-
