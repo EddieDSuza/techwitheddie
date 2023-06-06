@@ -41,7 +41,7 @@ sensor:
     update_interval: 300000ms
     name: "Rain Water storage" #You may change the tank name
     # tank height: 1.20m
-	  # distance between sensor and water brim 0.10m
+    # distance between sensor and water brim 0.10m
     # full tank: tank height-0.10m = 1.10m
     # current reading: x
     # used = (x - 0.10m)
