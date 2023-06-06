@@ -1,0 +1,64 @@
+esphome:
+  name: "water-tank-right"
+  friendly_name: water_tank_right
+
+esp8266:
+  board: nodemcuv2
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "T7kLzcYfRWD8ZUoEOe6bBssbRM4cfpSQEauwC+fDB9A="
+
+ota:
+
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esphome-Web-238E1D"
+    password: "RcDMK9asNA7v"
+
+captive_portal:
+
+sensor:
+  - platform: wifi_signal
+    name: "WiFi Signal Sensor"
+    update_interval: 60s          #to display WiFi signal strength
+    
+  - platform: ultrasonic
+    trigger_pin: D5
+    echo_pin: D6
+    unit_of_measurement: "%"
+    icon: "mdi:water-percent"
+    accuracy_decimals: 0
+    update_interval: 300000ms
+    name: "Rain Water storage" #You may change the tank name
+    # tank height: 1.20m
+	  # distance between sensor and water brim 0.10m
+    # full tank: tank height-0.10m = 1.10m
+    # current reading: x
+    # used = (x - 0.10m)
+    # remaining = (1.10m - used)
+    # percent = (remaining / 1.10m) * 100
+    filters:
+      - lambda: return (1-((x-.10)/1.10))*100;
+      - filter_out: nan
+      
+  - platform: ultrasonic
+    trigger_pin: D5
+    echo_pin: D6
+    update_interval: 1200000ms     #5 minutes. You can change this value
+    name: "Remaining Water in Tank"
+    unit_of_measurement: "l"
+    accuracy_decimals: 0
+    
+    filters:
+      - lambda: return (1-((x-.10)/1.10))*1000;
+      - filter_out: nan
