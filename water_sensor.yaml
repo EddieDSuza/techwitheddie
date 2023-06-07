@@ -38,7 +38,9 @@ sensor:
     unit_of_measurement: "%"
     icon: "mdi:water-percent"
     accuracy_decimals: 0
-    update_interval: 300000ms
+    pulse_time: 200ms
+    timeout: 4.0m
+    update_interval: 5s
     name: "Rain Water storage" #You may change the tank name
     # tank height: 1.20m
     # distance between sensor and water brim 0.10m
@@ -62,3 +64,4 @@ sensor:
     filters:
       - lambda: return (1-((x-.10)/1.10))*1000;
       - filter_out: nan
+   
