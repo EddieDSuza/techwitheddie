@@ -111,7 +111,7 @@ echo "Commence HEIMDALL Setup"
 echo "----------------------------------------------------------------"
 mkdir /home/kodestar/docker
 echo " "
-sudo docker run --name=heimdall -d --restart unless-stopped -v /home/kodestar/docker/heimdall:/config -e PGID=1000 -e PUID=1000 -p 8201:80 -p 8200:443 linuxserver/heimdall
+sudo docker run --name=heimdall -d --restart unless-stopped -v /home/kodestar/docker/heimdall:/config -e PGID=1000 -e PUID=1000 -p 8201:80 -p 8200:443 lscr.io/linuxserver/heimdall:latest
 echo " "
 echo "----------------------------------------------------------------"
 echo "HEIMDALL Interface is reachable at homebridge.local:8201"
