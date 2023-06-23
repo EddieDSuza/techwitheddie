@@ -14,3 +14,7 @@ enable_uart=1
 
 # Disable Serial Port & Enable Serial Power
 sudo raspi-config
+
+# configure the RTC module
+sudo hwclock --systohc 
+sudo hwclock --verbose
