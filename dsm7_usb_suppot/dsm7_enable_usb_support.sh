@@ -11,21 +11,21 @@ modprobe cdc-acm
 
 cd /lib/modules/
 
-sudo wget https://web.archive.org/web/20211027134846/http://www.jadahl.com/iperf-arp-scan/DSM_7.0/apollolake/ch341.ko
+sudo wget https://github.com/robertklep/dsm7-usb-serial-drivers/raw/main/modules/apollolake/dsm-7.2/ch341.ko
 sudo insmod /lib/modules/ch341.ko
-sudo wget https://web.archive.org/web/20211027134846/http://www.jadahl.com/iperf-arp-scan/DSM_7.0/apollolake/cp210x.ko
+sudo wget https://github.com/robertklep/dsm7-usb-serial-drivers/raw/main/modules/apollolake/dsm-7.2/cp210x.ko
 sudo insmod /lib/modules/cp210x.ko
-sudo wget https://web.archive.org/web/20211027134846/http://www.jadahl.com/iperf-arp-scan/DSM_7.0/apollolake/pl2303.ko
+sudo wget https://github.com/robertklep/dsm7-usb-serial-drivers/raw/main/modules/apollolake/dsm-7.2/pl2303.ko
 sudo insmod /lib/modules/pl2303.ko
-sudo wget https://web.archive.org/web/20211027134846/http://www.jadahl.com/iperf-arp-scan/DSM_7.0/apollolake/ti_usb_3410_5052.ko
+sudo wget https://github.com/robertklep/dsm7-usb-serial-drivers/raw/main/modules/apollolake/dsm-7.2/ti_usb_3410_5052.ko
 sudo insmod /lib/modules/ti_usb_3410_5052.ko
 
 # Configure an autoload script
 
 cd  /usr/local/etc/rc.d/
-sudo wget https://web.archive.org/web/20211027134846/http://www.jadahl.com/iperf-arp-scan/DSM_7.0/apollolake/start-usb-drivers.sh
-sudo chmod +x start-usb-drivers.sh
+sudo wget https://github.com/robertklep/dsm7-usb-serial-drivers/raw/main/usb-serial-drivers.sh
+sudo chmod +x usb-serial-drivers.sh
 
 # Make sure your devices are recongnized
 
-sudo /usr/local/etc/rc.d/start-usb-drivers.sh start
+sudo /usr/local/etc/rc.d/usb-serial-drivers.sh start
