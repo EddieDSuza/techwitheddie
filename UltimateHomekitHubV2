@@ -31,6 +31,18 @@ echo "----------------------------------------------------------------"
 echo " "
 echo " "
 echo " "
+# Node.js Install
+echo "----------------------------------------------------------------"
+echo "Commence Node.js Install"
+echo "----------------------------------------------------------------"
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt-get install -y nodejs
+echo "----------------------------------------------------------------"
+echo "Node.js Install Completed"
+echo "----------------------------------------------------------------"
+echo " "
+echo " "
+echo " "
 # Docker setup
 echo "----------------------------------------------------------------"
 echo "Commence Docker Setup"
@@ -110,9 +122,9 @@ echo " "
 echo "----------------------------------------------------------------"
 echo "Commence HEIMDALL Setup"
 echo "----------------------------------------------------------------"
-sudo mkdir /kodestar/
+sudo mkdir heimdall
 echo " "
-sudo docker run --name=heimdall -d --restart unless-stopped -v /kodestar/heimdall:/config -e PGID=1000 -e PUID=1000 -p 8201:80 -p 8200:443 linuxserver/heimdall
+sudo docker run --name=heimdall -d --restart unless-stopped -v $(pwd)/heimdall:/config -e PGID=1000 -e PUID=1000 -p 8201:80 -p 8200:443 linuxserver/heimdall
 echo " "
 echo "----------------------------------------------------------------"
 echo "HEIMDALL Interface is reachable at homebridge.local:8201"
