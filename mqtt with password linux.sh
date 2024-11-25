@@ -15,3 +15,7 @@ listener 1883
  
 #Test the broker
 mosquitto_sub -d -u YOUR-MQTT-USERNAME -P YOUR-MQTT-PASSWORD -t dev/test
+
+#start Service
+sudo systemctl enable mosquitto
+sudo systemctl start mosquitto
