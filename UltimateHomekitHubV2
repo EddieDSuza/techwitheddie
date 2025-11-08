@@ -138,7 +138,7 @@ echo "Commence Homebridge Setup"
 echo "----------------------------------------------------------------"
 sudo mkdir homebridge
 echo " "
-sudo docker run --name=homebridge --net=host --restart=always -e TZ=Europe/London -e PUID=1026 -e PGID=100 -e HOMEBRIDGE_CONFIG_UI=1 -e HOMEBRIDGE_CONFIG_UI_PORT=8581 -v $(pwd)/homebridge:/homebridge/ oznu/homebridge:latest
+sudo docker run --name=homebridge --net=host --restart=always -e TZ=Europe/London -e PUID=1026 -e PGID=100 -e HOMEBRIDGE_CONFIG_UI=1 -e HOMEBRIDGE_CONFIG_UI_PORT=8581 -v $(pwd)/homebridge:/homebridge/ homebridge/homebridge:latest
 echo " "
 echo "----------------------------------------------------------------"
 echo "Homebridge Interface is reachable at "IP ADDRESS":8581"
